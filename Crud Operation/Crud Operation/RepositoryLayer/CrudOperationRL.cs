@@ -23,7 +23,7 @@ namespace Crud_Operation.RepositoryLayer
 
             try
             {
-                string SqlQuery = "Insert into CrudOperationTable (UserName, Age) values (@UserName, @Age)";
+                string? SqlQuery = _configuration["Queries:CreateRecord"];
                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _sqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
@@ -56,7 +56,7 @@ namespace Crud_Operation.RepositoryLayer
             response.Message = "Successful";
             try
             {
-                string SqlQuery = "Delete from CrudOperationTable where Id=@Id";
+                string? SqlQuery = _configuration["Queries:DeleteRecord"];
                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _sqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
@@ -94,7 +94,7 @@ namespace Crud_Operation.RepositoryLayer
             response.Message = "Successful";
             try
             {
-                string SqlQuery = "Select UserName, Age from CrudOperationTable;";
+                string? SqlQuery = _configuration["Queries:ReadRecord"];
                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _sqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;
@@ -137,7 +137,7 @@ namespace Crud_Operation.RepositoryLayer
             response.Message = "Successful";
             try
             {
-                string SqlQuery = "Update CrudOperationTable Set UserName = @UserName, Age=@Age where Id =@Id";
+                string? SqlQuery = _configuration["Queries:UpdateRecord"];
                 using (SqlCommand sqlCommand = new SqlCommand(SqlQuery, _sqlConnection))
                 {
                     sqlCommand.CommandType = System.Data.CommandType.Text;

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Crud Operation"
+    "\\Crud Operation",
+    "\\Crud Operation\\Controllers",
+    "\\Crud Operation\\RepositoryLayer"
   ],
   "SelectedNode": "\\Crud Operation.sln",
   "PreviewInSolutionExplorer": false
